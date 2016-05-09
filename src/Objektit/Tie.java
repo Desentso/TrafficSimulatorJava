@@ -16,23 +16,25 @@ public class Tie {
     private ArrayList<Integer> tieY;
     private ArrayList<Integer> tieX;
     private Integer[][] tie2;
+    private boolean valot1;
     
     public Tie(){
         this.tieY = new ArrayList<>();
         this.tieX = new ArrayList<>();
         this.tie2 = new Integer[10][2];
+        this.valot1 = true;
     }
     
     public void rakennaTie(){
         
         this.tieY.add(10);
-        this.tieY.add(300);
+        this.tieY.add(320);
         this.tieY.add(440);
         
         
-        this.tieX.add(10);
+        this.tieX.add(12);
         this.tieX.add(415);
-        this.tieX.add(500);
+        this.tieX.add(495);
     }
     
     public ArrayList<Integer> getTieY(){
@@ -43,5 +45,15 @@ public class Tie {
     public ArrayList<Integer> getTieX(){
         
         return this.tieX;
+    }
+    
+    public boolean valot(){
+        
+        return this.valot1;
+    }
+    
+    public void setValot(boolean valinta){
+        
+        this.valot1 = valinta;
     }
 }

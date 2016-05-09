@@ -1,8 +1,10 @@
 
 import Objektit.Auto;
+import Objektit.Rakennus;
 import Objektit.Suunta;
 import Objektit.Tie;
 import java.util.ArrayList;
+import logiikka.Liikennevalot;
 import logiikka.Simulaattori;
 import ui.Piirtoalusta;
 import ui.UI;
@@ -19,9 +21,15 @@ public class Main {
         //ArrayList<Integer> reittix = tie.getTieX();
         //ArrayList<Integer> reittiy = tie.getTieY();
         
-        Auto auto1 = new Auto(12, 20, 10);
-        Auto auto2 = new Auto(12, 30, 10);
-        Auto auto3 = new Auto(8, 15, 5);
+        Rakennus rakennus1 = new Rakennus(80, 52, 40, 25);
+        
+        ArrayList<Rakennus> rakennukset = new ArrayList<>();
+        
+        rakennukset.add(rakennus1);
+        
+        Auto auto1 = new Auto(12, 20, 2);
+        Auto auto2 = new Auto(12, 30, 1);
+        Auto auto3 = new Auto(8, 15, 3);
         
         autot.add(auto1);
         autot.add(auto2);
@@ -36,13 +44,15 @@ public class Main {
         auto3.setMutkaX(1);
         auto3.setMutkaY(1);
         
-        Piirtoalusta piirtoalusta = new Piirtoalusta(tie, autot);  
+        Piirtoalusta piirtoalusta = new Piirtoalusta(tie, autot, rakennukset);  
         
         UI ui = new UI(tie, auto1, piirtoalusta);
         
         ui.run();
         
-        Simulaattori simulaattori = new Simulaattori(tie, autot, piirtoalusta);
+        Liikennevalot valot = new Liikennevalot(tie);
+        
+        Simulaattori simulaattori = new Simulaattori(tie, autot, piirtoalusta, valot);
         
         simulaattori.simuloi();
         
