@@ -126,6 +126,14 @@ public class Auto {
     public int getMutkaY() {
         return mutkaY;
     }
+
+    public void setMutkaX(int mutkaX) {
+        this.mutkaX = mutkaX;
+    }
+
+    public void setMutkaY(int mutkaY) {
+        this.mutkaY = mutkaY;
+    }
     
     
     

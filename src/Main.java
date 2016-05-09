@@ -33,7 +33,8 @@ public class Main {
         auto3.setX(400);
         auto3.setSuunta(Suunta.VASEN);
         
-        
+        auto3.setMutkaX(1);
+        auto3.setMutkaY(1);
         
         Piirtoalusta piirtoalusta = new Piirtoalusta(tie, autot);  
         
