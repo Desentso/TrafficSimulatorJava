@@ -3,7 +3,7 @@
 
 -The Code is mostly in Finnish so it might be hard to grasp what is it about
 
-
+<br>
 
 
 Liikenne Simulaattori Java
@@ -14,15 +14,15 @@ Liikenne Simulaattori Java
 
 -Tavoitteet:
 
-  -kaksi toimivaa kaistaa
+	-kaksi toimivaa kaistaa
   
-  -rakennuksia/paikkoja joissa autot voivat käydä
+	-rakennuksia/paikkoja joissa autot voivat käydä
   
-  -automaattinen reitin haku
+	-automaattinen reitin haku
   
-  -liikenneympyrät, muut kompleksimmat liikennerakenteet
+	-liikenneympyrät, muut kompleksimmat liikennerakenteet
   
-  -nopeuden vaihto
+	-nopeuden vaihto
   
-  -"törmäyksien esto", autot ajavat peräkkäin eivät toistensa läpi tai ohittavat toista kaistaa
+	-"törmäyksien esto", autot ajavat peräkkäin eivät toistensa läpi tai ohittavat toista kaistaa
   
