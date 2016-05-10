@@ -1,5 +1,6 @@
 # TrafficSimulatorJava
 -Traffic Simulator to simulate cars driving around, traffic lights, places, two lanes
+
 -The Code is mostly in Finnish so it might be hard to grasp what is it about
 
 Liikenne Simulaattori Java
