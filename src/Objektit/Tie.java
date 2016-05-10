@@ -6,6 +6,7 @@
 package Objektit;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -17,6 +18,8 @@ public class Tie {
     private ArrayList<Integer> tieX;
     private Integer[][] tie2;
     private boolean valot1;
+    
+    private HashMap<Integer, Integer> tiet;
     
     public Tie(){
         this.tieY = new ArrayList<>();

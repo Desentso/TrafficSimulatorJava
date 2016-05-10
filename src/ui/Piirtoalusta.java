@@ -144,7 +144,7 @@ public class Piirtoalusta extends JPanel{
         
         g.fillOval(1, 264, 9, 9);
         
-        g.fillOval(422, 35, 9 ,9);
+        g.fillOval(422, 55, 9 ,9);
     }
     
     public void paivita(){

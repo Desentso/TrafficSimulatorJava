@@ -29,6 +29,8 @@ public class Auto {
     private boolean ymove;
     private boolean xmove;
     
+    private boolean oikea;
+    
     public Auto(int leveys, int korkeus, int nopeus){
         
        this.leveys = leveys;
@@ -42,7 +44,25 @@ public class Auto {
        
        this.mutkaX = 2;
        this.mutkaY = 2;
-
+       
+       this.oikea = true;
+    }
+    
+    public Auto(int leveys, int korkeus, int nopeus, Suunta suunta){
+        
+       this.leveys = leveys;
+       this.korkeus = korkeus;
+       this.x = 14;
+       this.y = 20;
+       this.nopeus = nopeus;
+       this.suunta = suunta;
+       this.ymove = true;
+       this.xmove = false;
+       
+       this.mutkaX = 2;
+       this.mutkaY = 2;
+       
+       this.oikea = true;
     }
 
     public int getLeveys() {
@@ -86,16 +106,66 @@ public class Auto {
         return this.suunta;
     }
 
-    public void setSuunta(Suunta suunta) {
-        this.suunta = suunta;
+    public void setSuunta() {
         
-        if (suunta == Suunta.OIKEA || suunta == Suunta.VASEN){
+        //this.suunta = suunta;
+        
+        if (this.xmove && this.oikea){
+        
+            if (this.suunta == Suunta.ALAS){
+
+                this.suunta = Suunta.OIKEA;
+                this.setX(15);
+            } else if(this.suunta == Suunta.YLOS){
+
+                this.setX(this.getX()-2);
+                this.suunta = Suunta.VASEN;
+            }
+            
+        } else if (this.xmove && !this.oikea){
+            
+            if (this.suunta == Suunta.ALAS){
+
+                this.suunta = Suunta.VASEN;
+                //this.setX(15);
+                this.x = this.x - 2;
+            } else if(this.suunta == Suunta.YLOS){
+
+                //this.setX(this.getX()-2);
+                this.x = this.x + 2;
+                this.suunta = Suunta.OIKEA;
+            }
+        }
+        
+        if (this.ymove && this.oikea){
+            
+            if (this.suunta == Suunta.OIKEA){
+
+                this.suunta = Suunta.YLOS;
+            } else if (this.suunta == Suunta.VASEN){
+
+                this.setX(this.getX()+2);
+                this.suunta = Suunta.ALAS;
+            }
+        } else if (this.ymove && !this.oikea){
+            
+            if (this.suunta == Suunta.OIKEA){
+
+                this.suunta = Suunta.ALAS;
+            } else if (this.suunta == Suunta.VASEN){
+
+                //this.setX(this.getX()+2);
+                this.suunta = Suunta.YLOS;
+            }
+        }
+        
+        if (this.suunta == Suunta.OIKEA || this.suunta == Suunta.VASEN){
             
             int l = this.korkeus;
             this.korkeus = this.leveys;
             this.leveys = l;
             
-        } else if (suunta == Suunta.ALAS ||suunta == Suunta.YLOS){
+        } else if (this.suunta == Suunta.ALAS || this.suunta == Suunta.YLOS){
             
             int k = this.korkeus;
             this.korkeus = this.leveys;
@@ -135,6 +205,30 @@ public class Auto {
         this.mutkaY = mutkaY;
     }
     
+    public void liiku(){
+        
+         if(this.yMove() && this.getSuunta() == Suunta.ALAS){
+
+            this.setY(this.getY() + this.nopeus);
+
+        } else if (this.yMove()){
+
+            this.setY(this.getY() - this.nopeus); 
+        }
+         
+
+        if(this.xMove() && this.getSuunta() == Suunta.OIKEA){
+
+            this.setX(this.getX() + this.nopeus);
+        } else if (this.xMove()){
+
+            this.setX(this.getX() - this.nopeus);
+        }
+    }
     
+    public void setOikea(boolean oikea){
+        
+        this.oikea = oikea;
+    }
     
 }
