@@ -19,7 +19,7 @@ public class Tie {
     private Integer[][] tie2;
     private boolean valot1;
     
-    private HashMap<Integer, Integer> tiet;
+    //private HashMap<Integer, Integer> tiet;
     
     public Tie(){
         this.tieY = new ArrayList<>();
@@ -38,6 +38,8 @@ public class Tie {
         this.tieX.add(12);
         this.tieX.add(415);
         this.tieX.add(495);
+        
+        //this.tiet.push(10, );
     }
     
     public ArrayList<Integer> getTieY(){
