@@ -49,7 +49,7 @@ public class Simulaattori {
 
                 
                 //Toisensuuntainen liikenne
-                if ((auto.getY() < 36 && auto.getSuunta() == Suunta.YLOS) || (auto.getY() > 280 && auto.getSuunta() == Suunta.ALAS)){
+                if ((auto.getY() < 36 && auto.getSuunta() == Suunta.YLOS) || (auto.getY() > 400 && auto.getSuunta() == Suunta.ALAS)){
                     
                     System.out.println(auto.getNopeus());
                     auto.setYmove(false);
@@ -72,7 +72,7 @@ public class Simulaattori {
 
                 int mutkax = auto.getMutkaX();
                 
-                if((auto.getX() > 463 && auto.getSuunta() == Suunta.OIKEA) || (auto.getX() < 406 && auto.getSuunta() == Suunta.VASEN)){
+                if((auto.getX() > 382 && auto.getSuunta() == Suunta.OIKEA) || (auto.getX() < 38 && auto.getSuunta() == Suunta.VASEN)){
                    
                     auto.setYmove(true);
                     auto.setXmove(false);

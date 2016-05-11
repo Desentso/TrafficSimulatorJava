@@ -50,9 +50,12 @@ public class Tie {
         this.vtieX.add(20);
         this.vtieX.add(463);
         this.vtieX.add(406);
+        this.vtieX.add(38);
+        this.vtieX.add(382);
         
         this.vtieY.add(36);
         this.vtieY.add(280);
+        this.vtieY.add(400);
         //this.tiet.push(10, );
     }
     
