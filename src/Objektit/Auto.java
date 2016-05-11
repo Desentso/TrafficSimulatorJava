@@ -134,6 +134,7 @@ public class Auto {
                 //this.setX(this.getX()-2);
                 this.x = this.x + 2;
                 this.suunta = Suunta.OIKEA;
+                System.out.println("asd");
             }
         }
         

@@ -27,9 +27,11 @@ public class Main {
         
         rakennukset.add(rakennus1);
         
+        //Auto auto1 = new Auto(12, 20, 2, Suunta.YLOS);
         Auto auto1 = new Auto(12, 20, 2, Suunta.YLOS);
         Auto auto2 = new Auto(12, 30, 1);
         Auto auto3 = new Auto(8, 15, 3, Suunta.VASEN);
+        
         
         autot.add(auto1);
         autot.add(auto2);
@@ -37,10 +39,14 @@ public class Main {
         
         auto2.setY(150);
         
+        auto1.setX(35);
+        auto1.setY(200);
+        auto1.setOikea(false);
+        
         auto3.setY(14);
         auto3.setX(400);
         
-        auto1.setOikea(false);
+        //auto1.setOikea(false);
         //auto3.setSuunta(Suunta.VASEN);
         
         auto3.setMutkaX(1);

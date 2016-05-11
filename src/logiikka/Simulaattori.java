@@ -47,27 +47,47 @@ public class Simulaattori {
                 int mutkay = auto.getMutkaY();
                 //ArrayList<Integer> listaY = auto.getReittiy();
 
-                if((auto.getY() <= listaY.get(0)+5 || auto.getY() > listaY.get(mutkay)-15 || auto.getY() > 300) && auto.yMove()){
+                
+                //Toisensuuntainen liikenne
+                if ((auto.getY() < 36 && auto.getSuunta() == Suunta.YLOS) || (auto.getY() > 280 && auto.getSuunta() == Suunta.ALAS)){
+                    
+                    System.out.println(auto.getNopeus());
+                    auto.setYmove(false);
+                    auto.setXmove(true);
+                    auto.setSuunta();
+                    //auto.setY(auto.getY() - 4);
+                }
+                
+                
+                /*if((auto.getY() <= listaY.get(0)+5 || auto.getY() > listaY.get(mutkay)-15) && auto.yMove()){
 
                     auto.setYmove(false);
                     auto.setXmove(true);
                     auto.setSuunta();
 
-                }
+                }*/
 
                 ArrayList<Integer> listaX = this.tie.getTieX();
                 //ArrayList<Integer> listaX = auto.getReittix();
 
                 int mutkax = auto.getMutkaX();
                 
-                if((auto.getX() < listaX.get(0)+1 || auto.getX() > listaX.get(mutkax)-10) && auto.xMove()){
+                if((auto.getX() > 463 && auto.getSuunta() == Suunta.OIKEA) || (auto.getX() < 406 && auto.getSuunta() == Suunta.VASEN)){
+                   
+                    auto.setYmove(true);
+                    auto.setXmove(false);
+                    
+                    auto.setSuunta();
+                }
+                
+                /*if((auto.getX() < listaX.get(0)+1 || auto.getX() > listaX.get(mutkax)-12) && auto.xMove()){
 
                     auto.setYmove(true);
                     auto.setXmove(false);
                     
                     auto.setSuunta();
 
-                }
+                }*/
 
                 if ((auto.getY() >= 220 && auto.getY() <= 255 && auto.getX() <= 20 && !valot) || (auto.getY() >= 40 && auto.getY() <= 70 && auto.getX() <= 450 && auto.getX() >= 400 && !valot)){
                     

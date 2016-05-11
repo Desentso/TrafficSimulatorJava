@@ -16,6 +16,10 @@ public class Tie {
     
     private ArrayList<Integer> tieY;
     private ArrayList<Integer> tieX;
+    
+    private ArrayList<Integer> vtieY;
+    private ArrayList<Integer> vtieX;
+    
     private Integer[][] tie2;
     private boolean valot1;
     
@@ -24,6 +28,10 @@ public class Tie {
     public Tie(){
         this.tieY = new ArrayList<>();
         this.tieX = new ArrayList<>();
+        
+        this.vtieY = new ArrayList<>();
+        this.vtieX = new ArrayList<>();
+        
         this.tie2 = new Integer[10][2];
         this.valot1 = true;
     }
@@ -36,9 +44,15 @@ public class Tie {
         
         
         this.tieX.add(12);
-        this.tieX.add(415);
+        this.tieX.add(416);
         this.tieX.add(495);
         
+        this.vtieX.add(20);
+        this.vtieX.add(463);
+        this.vtieX.add(406);
+        
+        this.vtieY.add(36);
+        this.vtieY.add(280);
         //this.tiet.push(10, );
     }
     
