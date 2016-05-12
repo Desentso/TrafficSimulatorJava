@@ -232,4 +232,9 @@ public class Auto {
         this.oikea = oikea;
     }
     
+    public boolean getOikea(){
+        
+        return this.oikea;
+    }
+    
 }

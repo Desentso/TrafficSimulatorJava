@@ -46,55 +46,64 @@ public class Simulaattori {
                 ArrayList<Integer> listaY = this.tie.getTieY();
                 int mutkay = auto.getMutkaY();
                 //ArrayList<Integer> listaY = auto.getReittiy();
-
                 
-                //Toisensuuntainen liikenne
-                if ((auto.getY() < 36 && auto.getSuunta() == Suunta.YLOS) || (auto.getY() > 400 && auto.getSuunta() == Suunta.ALAS)){
+                if (!auto.getOikea()){
                     
-                    System.out.println(auto.getNopeus());
-                    auto.setYmove(false);
-                    auto.setXmove(true);
-                    auto.setSuunta();
-                    //auto.setY(auto.getY() - 4);
+                    //Toisensuuntainen liikenne
+                    if ((auto.getY() < 36 && auto.getSuunta() == Suunta.YLOS) || (auto.getY() > 400 && auto.getSuunta() == Suunta.ALAS)){
+
+                        System.out.println(auto.getNopeus());
+                        auto.setYmove(false);
+                        auto.setXmove(true);
+                        auto.setSuunta();
+                        //auto.setY(auto.getY() - 4);
+                    }
+                } else if (auto.getOikea()){
+                
+                    if((auto.getY() <= listaY.get(0)+5 || auto.getY() > listaY.get(mutkay)-15) && auto.yMove()){
+
+                        auto.setYmove(false);
+                        auto.setXmove(true);
+                        auto.setSuunta();
+
+                    }
+
                 }
                 
-                
-                /*if((auto.getY() <= listaY.get(0)+5 || auto.getY() > listaY.get(mutkay)-15) && auto.yMove()){
-
-                    auto.setYmove(false);
-                    auto.setXmove(true);
-                    auto.setSuunta();
-
-                }*/
-
-                ArrayList<Integer> listaX = this.tie.getTieX();
+                //ArrayList<Integer> listaX = this.tie.getTieX();
                 //ArrayList<Integer> listaX = auto.getReittix();
 
                 int mutkax = auto.getMutkaX();
                 
-                if((auto.getX() > 382 && auto.getSuunta() == Suunta.OIKEA) || (auto.getX() < 38 && auto.getSuunta() == Suunta.VASEN)){
-                   
-                    auto.setYmove(true);
-                    auto.setXmove(false);
+                if (!auto.getOikea()){
                     
-                    auto.setSuunta();
-                }
+                    ArrayList<Integer> listaX = this.tie.getvTieX();
+                    
+                    if((auto.getX() > listaX.get(4) && auto.getSuunta() == Suunta.OIKEA) || (auto.getX() < 38 && auto.getSuunta() == Suunta.VASEN)){
+
+                        auto.setYmove(true);
+                        auto.setXmove(false);
+
+                        auto.setSuunta();
+                    }
+                } else if (auto.getOikea()){
                 
-                /*if((auto.getX() < listaX.get(0)+1 || auto.getX() > listaX.get(mutkax)-12) && auto.xMove()){
-
-                    auto.setYmove(true);
-                    auto.setXmove(false);
+                    ArrayList<Integer> listaX = this.tie.getTieX();
                     
-                    auto.setSuunta();
+                    if((auto.getX() < listaX.get(0)+1 || auto.getX() > listaX.get(mutkax)-12) && auto.xMove()){
 
-                }*/
+                        auto.setYmove(true);
+                        auto.setXmove(false);
+
+                        auto.setSuunta();
+
+                    }
+                }
 
                 if ((auto.getY() >= 220 && auto.getY() <= 255 && auto.getX() <= 20 && !valot) || (auto.getY() >= 40 && auto.getY() <= 70 && auto.getX() <= 450 && auto.getX() >= 400 && !valot)){
                     
                     System.out.println("red light");
                 } else {
-                    
-                    int nopeus = auto.getNopeus();
                     
                     auto.liiku();
                     

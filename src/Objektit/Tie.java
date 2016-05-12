@@ -47,11 +47,12 @@ public class Tie {
         this.tieX.add(416);
         this.tieX.add(495);
         
+        //"väärän" puoleiset käännökset
         this.vtieX.add(20);
-        this.vtieX.add(463);
-        this.vtieX.add(406);
         this.vtieX.add(38);
         this.vtieX.add(382);
+        this.vtieX.add(406);
+        this.vtieX.add(463);
         
         this.vtieY.add(36);
         this.vtieY.add(280);
@@ -67,6 +68,16 @@ public class Tie {
     public ArrayList<Integer> getTieX(){
         
         return this.tieX;
+    }
+    
+    public ArrayList<Integer> getvTieY(){
+        
+        return this.vtieY;
+    }
+    
+    public ArrayList<Integer> getvTieX(){
+        
+        return this.vtieX;
     }
     
     public boolean valot(){
