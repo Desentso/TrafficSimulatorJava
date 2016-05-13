@@ -6,6 +6,7 @@
 package Objektit;
 
 import java.util.ArrayList;
+import logiikka.Reitinloytaja;
 
 /**
  *
@@ -15,6 +16,8 @@ public class Auto {
     
     private ArrayList<Integer> reittix;
     private ArrayList<Integer> reittiy;
+    
+    private Reitinloytaja reitinloytaja;
     
     private int leveys;
     private int korkeus;
@@ -46,6 +49,8 @@ public class Auto {
        this.mutkaY = 2;
        
        this.oikea = true;
+       
+       this.reitinloytaja = new Reitinloytaja(this, new Tie());
     }
     
     public Auto(int leveys, int korkeus, int nopeus, Suunta suunta){
@@ -63,6 +68,8 @@ public class Auto {
        this.mutkaY = 2;
        
        this.oikea = true;
+       
+       this.reitinloytaja = new Reitinloytaja(this , new Tie());
     }
 
     public int getLeveys() {
@@ -237,4 +244,18 @@ public class Auto {
         return this.oikea;
     }
     
+    public void setKohde(int x, int y){
+        
+        this.reitinloytaja.setKohde(x, y);
+    }
+    
+    public void setKohde(Rakennus rakennus){
+        
+        this.reitinloytaja.setKohde(rakennus);
+    }
+    
+    public void laskeReitti(){
+        
+        this.reitinloytaja.laskeReitti();
+    }
 }

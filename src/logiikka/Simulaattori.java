@@ -43,14 +43,19 @@ public class Simulaattori {
                 boolean valot = this.tie.valot();
                 
                 this.tie.rakennaTie();
-                ArrayList<Integer> listaY = this.tie.getTieY();
+                
+                //ArrayList<Integer> listaY = this.tie.getTieY();
                 int mutkay = auto.getMutkaY();
                 //ArrayList<Integer> listaY = auto.getReittiy();
                 
+                auto.laskeReitti();
+                
                 if (!auto.getOikea()){
                     
+                    ArrayList<Integer> listaY = this.tie.getvTieY();
+                    
                     //Toisensuuntainen liikenne
-                    if ((auto.getY() < 36 && auto.getSuunta() == Suunta.YLOS) || (auto.getY() > 400 && auto.getSuunta() == Suunta.ALAS)){
+                    if ((auto.getY() < listaY.get(0) && auto.getSuunta() == Suunta.YLOS) || (auto.getY() > 400 && auto.getSuunta() == Suunta.ALAS) && auto.yMove()){
 
                         System.out.println(auto.getNopeus());
                         auto.setYmove(false);
@@ -60,6 +65,8 @@ public class Simulaattori {
                     }
                 } else if (auto.getOikea()){
                 
+                    ArrayList<Integer> listaY = this.tie.getTieY();
+                    
                     if((auto.getY() <= listaY.get(0)+5 || auto.getY() > listaY.get(mutkay)-15) && auto.yMove()){
 
                         auto.setYmove(false);
@@ -79,7 +86,7 @@ public class Simulaattori {
                     
                     ArrayList<Integer> listaX = this.tie.getvTieX();
                     
-                    if((auto.getX() > listaX.get(4) && auto.getSuunta() == Suunta.OIKEA) || (auto.getX() < 38 && auto.getSuunta() == Suunta.VASEN)){
+                    if((auto.getX() > listaX.get(4) && auto.getSuunta() == Suunta.OIKEA) || (auto.getX() < 38 && auto.getSuunta() == Suunta.VASEN)  && auto.xMove()){
 
                         auto.setYmove(true);
                         auto.setXmove(false);
