@@ -24,12 +24,14 @@ public class Main {
         Rakennus rakennus1 = new Rakennus(80, 52, 40, 25);
         Rakennus rakennus2 = new Rakennus(505, 200, 25, 40);
         Rakennus rakennus3 = new Rakennus(100, -8, 50, 15);
+        Rakennus rakennus4 = new Rakennus(450, 445, 30, 20);
         
         ArrayList<Rakennus> rakennukset = new ArrayList<>();
         
         rakennukset.add(rakennus1);
         rakennukset.add(rakennus2);
         rakennukset.add(rakennus3);
+        rakennukset.add(rakennus4);
         
         //Auto auto1 = new Auto(12, 20, 2, Suunta.YLOS);
         Auto auto1 = new Auto(12, 20, 2, Suunta.YLOS);

@@ -46,7 +46,7 @@ public class Reitinloytaja {
     public void setKohde(Rakennus rakennus){
         
         this.rakennus = rakennus;
-        this.kohdex = rakennus.getX() - 15;
+        this.kohdex = rakennus.getX();
         this.kohdey = rakennus.getY();
     }
     
@@ -68,7 +68,7 @@ public class Reitinloytaja {
             //System.out.println(this.ay + ", Y " + this.kohdey);
             //System.out.println(this.ax + ", X " + this.kohdex);
             
-            if ((this.ax >= this.kohdex-5 && this.ax < this.kohdex + 10) && (this.ay > this.kohdey && this.ay < this.kohdey + 27)){
+            if ((this.ax >= this.kohdex-20 && this.ax < this.kohdex -5) && ((this.ay > this.kohdey && this.ay < this.kohdey + 27) || (this.ay < this.kohdey && this.ay > this.kohdey - 27))){
 
                 this.auto.setXmove(false);
                 this.auto.setYmove(false);
@@ -85,13 +85,17 @@ public class Reitinloytaja {
 
                 for(Integer mutka : this.tiet.getTieY()){
 
-                    int ero = this.ay - mutka;
+                    int ero = this.kohdey - mutka;
                     
                     if (lahin == 0 && mutka > this.ay){
 
                         lahin = ero;
                         valittuMutka = mutka;
-                    } else if(ero > lahin && mutka > this.ay){
+                    } else if(ero > lahin && mutka > this.ay && ero < 0){
+
+                        lahin = ero;
+                        valittuMutka = mutka;
+                    } else if(ero < lahin && mutka > this.ay && ero > 0){
 
                         lahin = ero;
                         valittuMutka = mutka;
@@ -120,12 +124,21 @@ public class Reitinloytaja {
                 for(Integer mutka : this.tiet.getTieX()){
 
                     int ero = this.kohdex - mutka;
-
+                    
                     if (lahin == 0 && mutka > this.ax){
 
                         lahin = ero;
                         valittuMutka = mutka;
-                    } else if(ero < lahin && mutka > this.ax){
+                        
+                    } else if(ero < lahin && mutka > this.ax && lahin > 0 && ero < 0){
+
+                        lahin = ero;
+                        valittuMutka = mutka;
+                    }  else if(ero < lahin && mutka > this.ax && ero > 0){
+
+                        lahin = ero;
+                        valittuMutka = mutka;
+                    } else if(ero > lahin && mutka > this.ax && ero < 0){
 
                         lahin = ero;
                         valittuMutka = mutka;
